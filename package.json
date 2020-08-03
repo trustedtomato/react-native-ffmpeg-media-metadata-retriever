@@ -31,7 +31,10 @@
   },
   "keywords": [
     "react-native",
-    "ios",
+    "music",
+    "mp3",
+    "metadata",
+    "id3",
     "android"
   ],
   "repository": "https://github.com/trustedtomato/react-native-ffmpeg-media-metadata-retriever",
