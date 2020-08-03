@@ -63,13 +63,18 @@ class FfmpegMediaMetadataRetrieverModule(reactContext: ReactApplicationContext) 
 
         for (i in 0 until requiredMetadata.size()) {
           val metadatum = requiredMetadata.getString(i)
-          textMetadatumToTextMetadatumHandler(metadatum)?.also { textMetadatumHandler ->
-            val rawMetadatumValue = mmr.extractMetadata(textMetadatumHandler.metadataKey)
+          try {
+            val textMetadatumHandler = textMetadatumToTextMetadatumHandler(metadatum)!!
+            val rawMetadatumValue = mmr.extractMetadata(textMetadatumHandler.metadataKey)!!
             val metadatumValue = textMetadatumHandler.metadatumValueHandler(rawMetadatumValue)
 
             when (metadatumValue) {
               is StringMetadatum -> metadata.putString(metadatum!!, metadatumValue.string)
               is IntMetadatum -> metadata.putInt(metadatum!!, metadatumValue.int)
+            }
+          } catch (err: NullPointerException) {
+            if (metadatum !== null) {
+              metadata.putNull(metadatum)
             }
           }
         }
