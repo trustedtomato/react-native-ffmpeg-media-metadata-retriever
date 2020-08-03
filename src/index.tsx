@@ -25,7 +25,7 @@ interface Metadata {
   serviceName?: string;
   title?: string;
   track?: string;
-  variantBitrate?: string;
+  variantBitrate?: number;
   videoCodec?: string;
   videoRotation?: string;
 }

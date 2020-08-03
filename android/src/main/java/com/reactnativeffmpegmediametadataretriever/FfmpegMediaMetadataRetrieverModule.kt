@@ -32,12 +32,12 @@ class FfmpegMediaMetadataRetrieverModule(reactContext: ReactApplicationContext) 
         "creationTime" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_CREATION_TIME) { StringMetadatum(it) }
         "date" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_DATE) { StringMetadatum(it) }
         "disc" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_DISC) { StringMetadatum(it) }
-        "duration" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_DURATION) { StringMetadatum(it) }
+        "duration" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_DURATION) { IntMetadatum(it.toInt()) }
         "encodedBy" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_ENCODED_BY) { StringMetadatum(it) }
         "encoder" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_ENCODER) { StringMetadatum(it) }
         "filename" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_FILENAME) { StringMetadatum(it) }
-        "filesize" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_FILESIZE) { StringMetadatum(it) }
-        "framerate" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_FRAMERATE) { StringMetadatum(it) }
+        "filesize" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_FILESIZE) { IntMetadatum(it.toInt()) }
+        "framerate" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_FRAMERATE) { IntMetadatum(it.toInt()) }
         "genre" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_GENRE) { StringMetadatum(it) }
         "icyMetadata" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_ICY_METADATA) { StringMetadatum(it) }
         "language" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_LANGUAGE) { StringMetadatum(it) }
@@ -46,7 +46,7 @@ class FfmpegMediaMetadataRetrieverModule(reactContext: ReactApplicationContext) 
         "serviceName" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_SERVICE_NAME) { StringMetadatum(it) }
         "title" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_TITLE) { StringMetadatum(it) }
         "track" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_TRACK) { StringMetadatum(it) }
-        "variantBitrate" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_VARIANT_BITRATE) { StringMetadatum(it) }
+        "variantBitrate" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_VARIANT_BITRATE) { IntMetadatum(it.toInt()) }
         "videoCodec" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_VIDEO_CODEC) { StringMetadatum(it) }
         "videoRotation" -> TextMetadatumHandler(FFmpegMediaMetadataRetriever.METADATA_KEY_VIDEO_ROTATION) { StringMetadatum(it) }
         else -> null
